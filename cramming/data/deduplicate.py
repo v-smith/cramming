@@ -161,9 +161,9 @@ def _finish_and_return_to_hf_dataset(original_text_file, remove_file_cache):
 
             buf_split = buffer.split("<EOT>")
             if len(buf_split) > 1:
-                deduped_dataset["TEXT"] += buf_split[:-1]
+                deduped_dataset["text"] += buf_split[:-1]
                 buffer = buf_split[-1]
-        deduped_dataset["TEXT"] += (buffer + original_dataset.read().decode("utf-8")).split("<EOT>")[:-1]
+        deduped_dataset["text"] += (buffer + original_dataset.read().decode("utf-8")).split("<EOT>")[:-1]
 
     dataset = datasets.Dataset.from_dict(deduped_dataset)
     return dataset
