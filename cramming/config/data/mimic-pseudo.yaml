@@ -27,7 +27,7 @@ named_entity_simplification: False
 remove_whitespaces: False
 remove_trash: False
 trash_cutoff: 0.3
-deduplicate_entries: False
+deduplicate_entries: True
 deduplication_threshold: 100
 
 # Data Order:
