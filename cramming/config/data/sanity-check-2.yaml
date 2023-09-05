@@ -3,7 +3,7 @@ name: sanity-check-2
 # https://hydra.cc/docs/patterns/select_multiple_configs_from_config_group/
 defaults:
   - sources:
-      - ag_news
+      - mimic
 
 # Preprocessing
 normalizer:
