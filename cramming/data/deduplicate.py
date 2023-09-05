@@ -62,7 +62,7 @@ def _write_tmp_file(dataset, dirname):
 
     with open(text_file, "wb") as fout:
         for example in tqdm(dataset, desc="Writing dataset to tmp files."):  # not batched...
-            fout.write((example["text"] + "<EOT>").encode("utf-8"))
+            fout.write((example["TEXT"] + "<EOT>").encode("utf-8"))
     return text_file
 
 
@@ -161,9 +161,9 @@ def _finish_and_return_to_hf_dataset(original_text_file, remove_file_cache):
 
             buf_split = buffer.split("<EOT>")
             if len(buf_split) > 1:
-                deduped_dataset["text"] += buf_split[:-1]
+                deduped_dataset["TEXT"] += buf_split[:-1]
                 buffer = buf_split[-1]
-        deduped_dataset["text"] += (buffer + original_dataset.read().decode("utf-8")).split("<EOT>")[:-1]
+        deduped_dataset["TEXT"] += (buffer + original_dataset.read().decode("utf-8")).split("<EOT>")[:-1]
 
     dataset = datasets.Dataset.from_dict(deduped_dataset)
     return dataset
