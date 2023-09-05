@@ -9,5 +9,5 @@ wikipedia:
 
 
   # source-specific cleaning rules?
-  remove_columns: SUBJECT_ID
+  remove_columns:
   concatenate_successive_entries: 0
