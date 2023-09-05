@@ -79,7 +79,7 @@ def _construct_tokenizer(raw_datasets, cfg_data, known_tokens=[]):
 
         def batch_iterator(batch_size=4096):
             for i in range(0, len_dataset, batch_size):
-                yield raw_datasets[i : i + batch_size]["text"]
+                yield raw_datasets[i : i + batch_size]["TEXT"]
 
     except TypeError:
         # streaming dataset
