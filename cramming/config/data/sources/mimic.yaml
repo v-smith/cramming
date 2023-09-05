@@ -1,5 +1,5 @@
 # The mimic dataset, from local
-wikipedia:
+mimic:
   provider: local
   split: train
   streaming: False
@@ -9,5 +9,5 @@ wikipedia:
 
 
   # source-specific cleaning rules?
-  remove_columns:
+  remove_columns: SUBJECT_ID
   concatenate_successive_entries: 0
