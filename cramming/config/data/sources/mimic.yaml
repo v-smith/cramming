@@ -1,0 +1,13 @@
+# The mimic dataset, from local
+wikipedia:
+  provider: local
+  split: train
+  streaming: True
+  file_type: csv
+  files:
+    - /datadrive/mimic/files/clinical-bert-mimic-notes/setup_outputs/SUBJECT_ID_to_NOTES_1b.csv
+
+
+  # source-specific cleaning rules?
+  remove_columns: SUBJECT_ID
+  concatenate_successive_entries: 0
